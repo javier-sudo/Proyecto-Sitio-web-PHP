@@ -7,31 +7,45 @@
             $con = new db();
             $this->PDO = $con->conexion();
         }
-        public function insertar($nombre){
-            $stament = $this->PDO->prepare("INSERT INTO username VALUES(null,:nombre)");
+        public function insertar($rut, $nombre, $apellido, $direccion){
+            $stament = $this->PDO->prepare("INSERT INTO persona VALUES(null, :rut, :nombre, :apellido, :direccion)");
+            $stament->bindParam(":rut",$rut);
             $stament->bindParam(":nombre",$nombre);
-            return ($stament->execute()) ? $this->PDO->lastInsertId() : false ;
+            $stament->bindParam(":apellido",$apellido);
+            $stament->bindParam(":direccion",$direccion);
+            
+            return ($stament->execute()) ? $this->PDO->lastInsertId() : false;
         }
+        
         public function show($id){
-            $stament = $this->PDO->prepare("SELECT * FROM username where id = :id limit 1");
+            $stament = $this->PDO->prepare("SELECT * FROM persona where id = :id") ;
             $stament->bindParam(":id",$id);
             return ($stament->execute()) ? $stament->fetch() : false ;
         }
-        public function index(){
-            $stament = $this->PDO->prepare("SELECT * FROM username");
+        public function Listado(){
+            $stament = $this->PDO->prepare("SELECT * FROM persona");
             return ($stament->execute()) ? $stament->fetchAll() : false;
         }
-        public function update($id,$nombre){
-            $stament = $this->PDO->prepare("UPDATE username SET nombre = :nombre WHERE id = :id");
-            $stament->bindParam(":nombre",$nombre);
-            $stament->bindParam(":id",$id);
+        public function actulizar($id, $rut, $nombre, $apellido, $direccion){
+            $stament = $this->PDO->prepare("UPDATE persona SET rut = :rut,
+                                                                nombre = :nombre, 
+                                                                apellido = :apellido, 
+                                                                direccion = :direccion 
+                                                                WHERE id = :id");
+            $stament->bindParam(":rut", $rut, PDO::PARAM_STR);
+            $stament->bindParam(":nombre", $nombre, PDO::PARAM_STR);
+            $stament->bindParam(":apellido", $apellido, PDO::PARAM_STR);
+            $stament->bindParam(":direccion", $direccion, PDO::PARAM_STR);
+            $stament->bindParam(":id", $id, PDO::PARAM_INT);
             return ($stament->execute()) ? $id : false;
         }
         public function delete($id){
-            $stament = $this->PDO->prepare("DELETE FROM username WHERE id = :id");
+            $stament = $this->PDO->prepare("DELETE FROM persona WHERE id = :id");
             $stament->bindParam(":id",$id);
             return ($stament->execute()) ? true : false;
         }
     }
+
+    
 
 ?>

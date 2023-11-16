@@ -8,13 +8,13 @@
     
 </head>
 <body>
-
+    
    <!-- Barra de Navegación -->
    <nav class="navbar" id="Navegador">
         <ul>
             <li><a href="view/username/create.php">Agregar Personas</a></li>
             <td>
-            <li><a href="view/username/index.php">Listado Personas</a></li>
+                <a href="view/username/TablaRegistrados.php">Listado de Personas</a>
             </td>
             <li ><a href="view/username/formulario_contacto.php">Contactarse con la empresa</a></li>
         
