@@ -1,65 +1,6 @@
-body {
-    font-family: Arial, sans-serif;
-    
-    margin: 0;
-    padding: 0;
-    background-color: #f8f8f8;
-    color: #333;
-}
+/* ... (otros estilos) */
 
-nav {
-    background-color: #4CAF50;
-    text-align: center;
-    padding: 1em;
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav li {
-    display: inline-block; /* Esto hace que los elementos se coloquen en línea */
-    margin: 0 10px;
-}
-
-nav a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-}
-
-header {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 1em;
-}
-
-section {
-    max-width: 800px;
-    margin: 2em auto;
-    padding: 1em;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    color : orange;
-}
-
-p {
-    line-height: 1.6;
-}
-
-#Contact {
-    padding-left: 1;
-    padding-right: 2;
-}
-
-#CuerpoFormulario{
-
+#CuerpoFormulario {
     font-family: Arial, Helvetica, sans-serif;
     min-width: 100vh;
     display: flex;
@@ -67,75 +8,75 @@ p {
     justify-content: center;
 }
 
-#form_formulario{
+#form_formulario {
     padding: 50px 55px;
-    box-shadow:0 0 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
     text-align: center;
     width: 340px;
 }
 
-.input-group{
+.input-group {
     display: flex;
     flex-direction: column;
-    text-align:left ;
-}
-#h2{
-color: #283629;
-font-size: 35px;
+    text-align: left;
 }
 
-label{
-color:#283629;
-font-size: 15px;
-font-size: 600;
-margin-bottom: 15px;
+#h2 {
+    color: #283629;
+    font-size: 35px;
 }
+
+label {
+    color: #283629;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+input,
 textarea {
-    padding: 10px 25px; /* Ajusta el padding para reducir el espacio alrededor del texto */
+    padding: 17px 25px;
     border-radius: 25px;
     margin-bottom: 20px;
     background-color: #EDFFF0;
     border: 2px solid #F0FAF1;
     color: #283629;
     outline: none;
-    resize: vertical; /* Permite que el usuario ajuste verticalmente el tamaño del textarea */
 }
 
-/* Opcional: Ajusta el número de filas según tus preferencias */
+input::placeholder,
+textarea::placeholder {
+    color: #b5cab6;
+}
+
 textarea {
-    height: 150px; /* Ajusta la altura según tus necesidades */
+    padding: 10px 25px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    background-color: #EDFFF0;
+    border: 2px solid #F0FAF1;
+    color: #283629;
+    outline: none;
+    resize: vertical;
+    height: 150px;
 }
 
-input,textarea{
-padding: 17px 25px;
-border-radius: 25px; 
-margin-bottom: 20px;
-background-color:#EDFFF0;
-border: 2px solid #F0FAF1;
-color:#283629;
-outline: none;
-}
-
-input::placeholder,textarea::placeholder{
-color: #b5cab6;
-}
-
-.form-txt{ 
+.form-txt {
     margin-bottom: 30px;
-    display:flex;
+    display: flex;
     justify-content: space-between;
     text-align: center;
 }
 
-.form-txt a{
-    color:#76b28e;
+.form-txt a {
+    color: #76b28e;
     font-size: 14px;
-    font-weight:60;
+    font-weight: 60;
     text-decoration: none;
 }
 
-.bnt{
+.btn {
     font-size: 16px;
     color: #FFFFFF;
     border: 0;
@@ -144,18 +85,35 @@ color: #b5cab6;
     box-shadow: 0 0 20px rgba(25, 254, 0, 0.4);
     cursor: pointer;
 }
-.btn:hover{
-    background-color:  #50e04b;
+
+.btn:hover {
+    background-color: #50e04b;
 }
-@media(max-width:991){
+
+@media (max-width: 991px) {
     body {
         padding: 30px;
     }
-    form{
-        padding: 50ps 30px;
+
+    form {
+        padding: 50px 30px;
         width: 100%;
     }
-    input{
-       padding:  15px;
+
+    input {
+        padding: 15px;
     }
 }
+
+
+/*Login*/
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #6a11cb;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+    }

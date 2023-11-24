@@ -1,0 +1,97 @@
+/* styles.css */
+
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8; /* Color de fondo suave */
+}
+
+/* Barra de Navegación */
+nav {
+    background-color: rgb(197, 231, 4); /* Color de fondo de la barra de navegación */
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none; /* Quitar los estilos de la lista */
+    display: flex;
+    justify-content: space-around; /* Distribuir elementos de manera uniforme */
+    align-items: center; /* Centrar verticalmente los elementos */
+    margin: 0; /* Eliminar el margen predeterminado de la lista */
+    padding: 0; /* Eliminar el relleno predeterminado de la lista */
+}
+
+/* Opcional: Añadir estilo de hover para resaltar enlaces al pasar el ratón */
+nav a:hover {
+    border-bottom: 2px solid white;
+    color: white; /* Cambiar el color del texto al pasar el ratón */
+}
+
+/* Estilos para la lista dentro del encabezado */
+header ul {
+    display: inline;
+    list-style-type: none;
+    margin: 0.5em auto;
+    text-align: center;
+}
+
+header ul li {
+    display: inline;
+}
+
+header ul li a {
+    text-decoration: none;
+    border: solid;
+    border-color: #7D8471;
+    border-radius: 50px;
+    background-color: #7D8471;
+    color: rgb(221, 10, 10)333; /* Cambiar el color del texto */
+    padding: 0.3em;
+}
+
+header ul li a:hover {
+    background-color: #B8B799;
+    border-color: #B8B799;
+    color: white; /* Cambiar el color del texto al pasar el ratón */
+}
+
+header ul li a:active {
+    padding: 0.2em;
+}
+/* Encabezado */
+header {
+    text-align: center;
+    padding: 50px;
+    background-color: #4CAF50; /* Color de fondo del encabezado */
+    color: white;
+}
+
+/* Sección Sobre Nosotros */
+.about-us {
+    padding: 20px;
+    background-color: #fff; /* Color de fondo de la sección */
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Sección Nuestros Servicios */
+.our-services {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Sección de Contacto */
+.contact {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
