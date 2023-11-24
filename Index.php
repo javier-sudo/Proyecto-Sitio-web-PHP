@@ -17,6 +17,8 @@
                 <a href="view/username/TablaRegistrados.php">Listado de Personas</a>
             </td>
             <li ><a href="view/username/formulario_contacto.php">Contactarse con la empresa</a></li>
+            </td>
+            <li ><a href="view/login/login.php">inciar Sesion</a></li>
         
     </nav>
     
