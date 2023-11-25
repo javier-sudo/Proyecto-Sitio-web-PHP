@@ -28,7 +28,7 @@
     </form>
 
     <div class="extra-options">
-        <a href="registro.php">Crear cuenta</a>
+        <a href="CrearUsuario.php">Crear cuenta</a>
         <a href="../../index.php">Volver al inicio</a>
     </div>
 </div>
