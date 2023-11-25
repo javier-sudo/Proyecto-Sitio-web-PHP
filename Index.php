@@ -4,23 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tu Página de Presentación</title>
-    <link rel="stylesheet" href="CSS/Estilo.css">
+    <link rel="stylesheet" href="CSS/CssIndex.css">
     
 </head>
-<body>
+<body id="Cuerpo">
     
    <!-- Barra de Navegación -->
    <nav class="navbar" id="Navegador">
-        <ul>
-            <li><a href="view/username/create.php">Agregar Personas</a></li>
-            <td>
-                <a href="view/username/TablaRegistrados.php">Listado de Personas</a>
-            </td>
-            <li ><a href="view/username/formulario_contacto.php">Contactarse con la empresa</a></li>
-            </td>
-            <li ><a href="view/login/login.php">inciar Sesion</a></li>
-        
-    </nav>
+    <ul>
+        <li><a href="view/username/create.php">Agregar Personas</a></li>
+        <li><a href="view/username/TablaRegistrados.php">Listado de Personas</a></li>
+        <li><a href="view/username/formulario_contacto.php">Contactarse con la empresa</a></li>
+        <li><a href="view/login/login.php">Iniciar Sesión</a></li>
+    </ul>
+</nav>
     
     <header>
         <h1>Bienvenido mi Pagina web</h1>
