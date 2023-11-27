@@ -19,17 +19,21 @@ class LoginModel {
 
             $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
 
+            // ... (resto del código)
+
             if ($resultado) {
                 // Iniciar sesión y guardar información del usuario
                 session_start();
-                $_SESSION['usuarioId'] = $resultado['id']; // Cambia esto según la estructura de tu tabla
-                $_SESSION['usuarioNombre'] = $resultado['nombre1']; // Cambia esto según la estructura de tu tabla
-                // Puedes agregar más información según tus necesidades
-            
-                return ["valido" => true];
+                $_SESSION['usuarioId'] = $resultado['id_usuario'];
+                $_SESSION['usuarioNombre'] = $resultado['nombre1'];
+                
+                return ["valido" => true, "usuarioId" => $resultado['id_usuario']];
             } else {
                 return ["valido" => false, "mensaje" => "Usuario o contraseña incorrectos."];
             }
+
+// ... (resto del código)
+
         } catch (PDOException $e) {
             return ["valido" => false, "mensaje" => "Error al intentar iniciar sesión."];
         }
@@ -66,5 +70,24 @@ class LoginModel {
             return "Error: " . $e->getMessage();
         }
     }
-}
+
+    
+
+        public function Perfil ($id){
+       
+                $db = new db();
+                $pdo = $db->conexion();
+                $sql = "SELECT * FROM usuarios WHERE id_usuario = :id";
+                $stmt = $pdo->prepare($sql);
+                $stmt->bindParam(':id', $id);
+                $stmt->execute();
+            }
+
+
+        }
+    
+
+
+
+
 ?>

@@ -12,16 +12,14 @@ class LoginController {
             $resultado = $loginModel->validarDatos($usuario, $contrasena);
 
             if ($resultado['valido']) {
-                echo "<p>Datos correctos. ¡Bienvenido!</p>";
+                header("Location: ../cliente/PaginaPrincipal.php");
             } else {
                 echo "<p>{$resultado['mensaje']}</p>";
             }
         }
     }
+    
 
-// ...
-
-// ...
 
 public function agregarCuenta() {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -62,9 +60,35 @@ public function agregarCuenta() {
         header("Location: ../view/login/login.php");  // Agregar punto y coma aquí
     }
 }
+
+
+
+
+    public function Perfil($idUsuario) {
+        $loginModel = new LoginModel();
+        $perfil = $loginModel->Perfil($idUsuario);
+
+        return $perfil;
+    }
+
+
+
+
+public function cerrarSesion() {
+    session_start();
+    session_destroy(); // Cierra la sesión
+
+    // Redirige a la página de inicio de sesión u otra página según tu estructura
+    header("Location: login.php");
+    exit();
+}
 }
 
+$loginController = new LoginController();
 
+if (isset($_GET['cerrar_sesion'])) {
+$loginController->cerrarSesion();
+}
 
 
 $loginController = new LoginController();
@@ -74,4 +98,6 @@ if (isset($_POST['login-submit'])) {
 } elseif (isset($_POST['register-submit'])) {
     $loginController->agregarCuenta();
 }
+
+
 ?>
